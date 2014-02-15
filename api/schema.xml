@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="beaconnow_app" defaultIdMethod="native">
+  <!-- table definitions go here -->
+  
+  <table name="users" phpName="User">
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+    <column name="first_name" type="varchar" size="128" required="false"/>
+    <column name="last_name" type="varchar" size="128" required="false"/>
+    <column name="email" type="varchar" size="128" required="true"/>
+    <column name="password" type="varchar" size="128" required="true"/>
+    <column name="permissions" type="longvarchar" size="65000" required="false"/>
+    
+    <column name="last_login" type="varchar" size="128" required="false"/>
+    <column name="activation_code" type="varchar" size="128" required="false"/>
+    <column name="activated_at" type="varchar" size="128" required="false"/>
+    <column name="persist_code" type="varchar" size="128" required="false"/>
+    <column name="reset_password_code" type="varchar" size="128" required="false"/>
+    <column name="created_at" type="timestamp" required="false"/>
+    <column name="updated_at" type="timestamp" required="false"/>
+  </table>
+  
+  <table name="communities" phpName="Community">
+      <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+      <column name="name" type="varchar" size="128" required="true"/>
+      <column name="city" type="varchar" size="128" required="false"/>
+      <column name="state_id" type="integer" required="false"/>
+      <column name="isActive" type="integer" required="false"/>
+      <column name="time_zone_id" type="integer" required="false"/>
+      <column name="contactName" type="varchar" size="128" required="false"/>
+      <column name="contactPhone" type="varchar" size="128" required="false"/>
+      <column name="contactEmail" type="varchar" size="128" required="false"/>
+      
+      <foreign-key foreignTable="states" phpName="State" refPhpName="Community">
+        <reference local="state_id" foreign="id"/>
+      </foreign-key>
+      
+      <foreign-key foreignTable="time_zones" phpName="TimeZone" refPhpName="Community">
+        <reference local="time_zone_id" foreign="id"/>
+      </foreign-key>
+  </table>
+  
+  <table name="contacts" phpName="Contact">
+      <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+      <column name="email" type="varchar" size="128" required="false"/>
+      <column name="phone" type="varchar" size="128" required="false"/>
+      <column name="contactName" type="varchar" size="128" required="false"/>
+      <column name="address1" type="varchar" size="128" required="false"/>
+      <column name="address2" type="varchar" size="128" required="false"/>
+  </table>
+  
+  <table name="states" phpName="State">
+      <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+      <column name="code" type="varchar" size="128" required="true"/>
+      <column name="name" type="varchar" size="128" required="true"/>
+  </table>
+  
+  <table name="time_zones" phpName="TimeZone">
+      <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+      <column name="timeZoneValue" type="integer" required="true"/>
+      <column name="timeZoneName" type="varchar" size="128" required="true"/>
+  </table>
+  
+  <table name="sponsors" phpName="Sponsor">
+      <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+      <column name="contact_id" type="integer" required="true"/>
+      <column name="state_id" type="integer" required="true"/>
+      
+      <foreign-key foreignTable="contacts" phpName="Contact" refPhpName="Sponsor">
+        <reference local="contact_id" foreign="id"/>
+      </foreign-key>
+      
+      <foreign-key foreignTable="states" phpName="State" refPhpName="Sponsor">
+        <reference local="state_id" foreign="id"/>
+      </foreign-key>
+      
+      <column name="sponsorLogo" type="varchar" size="128" required="false"/>
+      <column name="sponsorName" type="varchar" size="128" required="false"/>
+      <column name="sponsorMessage" type="varchar" size="128" required="false"/>
+      <column name="sponsorTextMessage" type="varchar" size="128" required="false"/>
+      <column name="maketingContact" type="varchar" size="128" required="false"/>
+      <column name="maketingPhone" type="varchar" size="128" required="false"/>
+      <column name="maketingEmail" type="varchar" size="128" required="false"/>
+      <column name="website" type="varchar" size="128" required="false"/>
+      <column name="note" type="varchar" size="128" required="false"/>
+      <column name="city" type="varchar" size="128" required="false"/>
+      <column name="zipcode" type="varchar" size="128" required="false"/>
+      <column name="created" type="varchar" size="128" required="false"/>
+      <column name="modified" type="varchar" size="128" required="false"/>
+  </table>
+  
+  <table name="schools" phpName="School">
+      <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+      <column name="user_id" type="integer" required="true"/>
+      <column name="sponsor_id" type="integer" required="true"/>
+      <column name="state_id" type="integer" required="true"/>
+      <column name="time_zone_id" type="integer" required="true"/>
+      <column name="contact_id" type="integer" required="true"/>
+      <column name="community_id" type="integer" required="true"/>
+      
+      <foreign-key foreignTable="users" phpName="User" refPhpName="School">
+        <reference local="user_id" foreign="id"/>
+      </foreign-key>
+      
+      <foreign-key foreignTable="sponsors" phpName="Sponsor" refPhpName="School">
+        <reference local="sponsor_id" foreign="id"/>
+      </foreign-key>
+      
+      <foreign-key foreignTable="states" phpName="State" refPhpName="School">
+        <reference local="state_id" foreign="id"/>
+      </foreign-key>
+      
+      <foreign-key foreignTable="time_zones" phpName="TimeZone" refPhpName="School">
+        <reference local="time_zone_id" foreign="id"/>
+      </foreign-key>
+      
+      <foreign-key foreignTable="contacts" phpName="Contact" refPhpName="School">
+        <reference local="contact_id" foreign="id"/>
+      </foreign-key>
+      
+      <foreign-key foreignTable="communities" phpName="Community" refPhpName="School">
+        <reference local="community_id" foreign="id"/>
+      </foreign-key>
+      
+      <column name="serviceNumber" type="varchar" size="128" required="false"/>
+      <column name="schoolName" type="varchar" size="128" required="false"/>
+      <column name="schoolLogo" type="varchar" size="128" required="false"/>
+      <column name="note" type="varchar" size="128" required="false"/>
+      <column name="city" type="varchar" size="128" required="false"/>
+      <column name="zipcode" type="varchar" size="128" required="false"/>
+      <column name="website" type="varchar" size="128" required="false"/>
+  </table>
+  
+</database>

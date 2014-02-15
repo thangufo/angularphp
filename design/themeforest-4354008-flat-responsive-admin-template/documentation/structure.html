@@ -1,0 +1,1398 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" href="css/prettify.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/prettify.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+</head>
+
+<body data-spy="scroll" data-target=".spy-nav" onload="prettyPrint()" data-offset="60">
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">FLAT</a>
+				<ul class="nav">
+					<li>
+						<a href="index.html">Overview</a>
+					</li>
+					<li class="active">
+						<a href="structure.html">Structure</a>
+					</li>
+					<li>
+						<a href="credits.html">Credits</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container" id="main">
+		<div class="row">
+			<div class="span3 spy-nav">
+				<ul class="nav nav-list nav-left" data-spy="affix" data-offset-top="0">
+					<li class='active'>
+						<a href="#layouts">
+							<i class="icon-chevron-right"></i>
+							Layouts
+						</a>
+					</li>
+					<li>
+						<a href="#typography">
+							<i class="icon-chevron-right"></i>
+							Typhography
+						</a>
+					</li>
+					<li>
+						<a href="#gridstructure">
+							<i class="icon-chevron-right"></i>
+							Grid-structure
+						</a>
+					</li>
+					<li>
+						<a href="#filestructure">
+							<i class="icon-chevron-right"></i>
+							File structure
+						</a>
+					</li>
+					<li>
+						<a href="#topbar">
+							<i class="icon-chevron-right"></i>
+							Topbar
+						</a>
+					</li>
+					<li>
+						<a href="#sidebar">
+							<i class="icon-chevron-right"></i>
+							Sidebar
+						</a>
+					</li>
+					<li>
+						<a href="#forms">
+							<i class="icon-chevron-right"></i>
+							Forms
+						</a>
+					</li>
+					<li>
+						<a href="#tables">
+							<i class="icon-chevron-right"></i>
+							Tables
+						</a>
+					</li>
+					<li>
+						<a href="#components">
+							<i class="icon-chevron-right"></i>
+							Components
+						</a>
+					</li>
+					<li>
+						<a href="#plugins">
+							<i class="icon-chevron-right"></i>
+							Plugins
+						</a>
+					</li>
+					<li>
+						<a href="#pages">
+							<i class="icon-chevron-right"></i>
+							Pages
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="span9">
+				<div id="layouts">
+					<div class="page-header">
+						<h1>Layouts</h1>
+					</div>
+					<p>
+						Flat comes with various possible layouts. You can easily change them with just one adjustment.
+					</p>
+					<h4>Default layout</h4>
+					<p>
+						The default layout is: Fluid width, static topbar and static sidebar. You don't need any classes for this layout. However if you want to change it you need to add attributes to the <pre class='prettyprint'>&lt;body&gt;</pre> container. Which classes you need for the specific layout is described below. Of course you can combine every layout with eachother which results in an extremly flexable and customizable theme.
+					</p>
+
+					<h4>Setting the default color</h4>
+					<p>
+						To change the default color for the theme you have to add the class<code>theme-COLORNAME</code> to the <code>body</code> tag. For example :<pre class='prettyprint'>&lt;body class="theme-red"&gt;</pre>That will make the color to red.
+					</p>
+					<h4>Sidebar hidden</h4>
+					<p>
+						To hide the sidebar by default just add the class <code>nav-hidden</code> to the <code>#content</code> element.
+					</p>
+					<pre class='prettyprint'>&lt;div class=&quot;container-fluid nav-hidden&quot; id=&quot;content&quot;&gt;</pre>
+					<h4>Sidebar right side</h4>
+					<p>
+						If you want to have the sidebar on the right hand side just use the snippet below.
+					</p>
+					<pre class="prettyprint">&lt;body class="sidebar-right"&gt;</pre>
+					<h4>Topbar fixed</h4>
+					<p>
+						If you want the topbar fixed at the top you need to use this body element
+						<pre class='prettyprint'>&lt;body data-layout-topbar="fixed"&gt;</pre>
+					</p>
+					<h4>Sidebar fixed</h4>
+					<p>
+						If you want the sidebar fixed you need this
+						<pre class='prettyprint'>&lt;body data-layout-sidebar="fixed"&gt;</pre>
+					</p>
+					<h4>Fixed width</h4>
+					<p>
+						If you want the width of the page to be fixed use this 
+						<pre class='prettyprint'>&lt;body data-layout="fixed"&gt;</pre>
+					</p>
+					<h4>Colors</h4>
+					<p>
+						I included 16 predefined colors with the theme. If you want your custom color theme look at the <code>themes.css</code> file and copy the styles which are in for example <code>theme-red</code> selector. Afterwards change the colors and rename the <code>red</code> to an unsed colorname. Feel free to contact me if you need help here!
+					</p>
+					<h4>Disable slide-toggle sidebar for mobile devices</h4>
+					<p>
+						If you want to disable the sidebar you can do this with just one attribute!
+						<pre class='prettyprint'>&lt;body data-mobile-sidebar="false"&gt;</pre>
+					</p>
+				</div>
+				<div id="typography">
+					<div class="page-header">
+						<h1>Typography</h1>
+					</div>
+					<p>
+						This theme uses the default bootstrap typography. I included an demonstration page under the <code>Components</code> navigation. If you want to read more about bootstrap typography follow this link : <a href="http://twitter.github.com/bootstrap/base-css.html#typography">http://twitter.github.com/bootstrap/base-css.html#typography</a>.
+					</p>
+				</div>
+				<div id="gridstructure">
+					<div class="page-header">
+						<h1>Grid structure</h1>
+					</div>
+					<h4>Grid system (bootstrap)</h4>
+					<p>This theme uses the default bootstrap grid-system. Head over to the bootstrap documentation to read more about it: <a href="http://twitter.github.com/bootstrap/scaffolding.html#gridSystem">http://twitter.github.com/bootstrap/scaffolding.html#gridSystem</a>.</p>
+					<h4>Widget box</h4>
+					<p>
+						The default widget box has the following structure:
+						<pre class='prettyprint'>&lt;div class=&quot;box&quot;&gt;
+  &lt;div class=&quot;box-title&quot;&gt;
+    &lt;h3&gt;
+      &lt;i class=&quot;icon-reorder&quot;&gt;&lt;/i&gt;
+      &lt;!-- Widget title --&gt;
+    &lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;box-content&quot;&gt;
+    &lt;!-- Widget Content --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+					</p>
+					<h4>Widget small / condensed</h4>
+					<p>Since FLAT v2.0 you can use small widgets and also condensed widgets if you don't want to use the big (default) ones. Simply add the class <code>box-small</code> or <code>box-condensed</code> to the <code>box</code> element.</p>
+					<h4>Widget closed by default</h4>
+					<p>To hide the widget content by default use the following code below and be sure to change the action-arrow in the widget title.</p>
+					<pre class="prettyprint">&lt;div class=&quot;box-content&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;</pre>
+					<h4>Widget without padding</h4>
+					<p>Sometimes you want the box content to have no padding. For example with tables. If so, simply add the class <code>nopadding</code> to the <code>box-content</code> container. It should look like this: <pre class='prettyprint'>&lt;div class=&quot;box&quot;&gt;
+  &lt;!-- ...box-title... --&gt;
+  &lt;div class=&quot;box-content nopadding&quot;&gt;
+    &lt;!-- Widget Content --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></p>
+					<h4>Widget bordered</h4>
+					<p>
+						The bordered box can be done with the class <code>box-bordered</code> on the <code>.box</code> element
+						<pre class='prettyprint'>&lt;div class=&quot;box box-bordered&quot;&gt;
+  &lt;!-- Box content --&gt;
+&lt;/div&gt;</pre>
+					</p>
+					<h4>Widget colored</h4>
+					<p>
+						To colorize the widget box add the class <code>box-color</code> to the <code>.box</code> element. <pre class='prettyprint'>&lt;div class=&quot;box box-color&quot;&gt;
+  &lt;!-- Box content --&gt;
+&lt;/div&gt;</pre>
+					</p>
+					<h4>Widget specific color</h4>
+					<p>
+						If you don't want the "main" color on the widget box you can use any of the predefined colors. Simply add the <code>colorname</code> as classname. Example (red box): <pre class='prettyprint'>&lt;div class=&quot;box box-color red&quot;&gt;
+  &lt;!-- Box content --&gt;
+&lt;/div&gt;</pre>
+					</p>
+					<h4>Drag&amp;Drop structure</h4>
+					<p>
+						You need these Drag&amp;Drop widgets? No problem! Use the code below:
+					</p>
+					<pre class='prettyprint'>&lt;div class=&quot;row-fluid&quot;&gt;
+  &lt;div class=&quot;span4&quot;&gt;
+    &lt;!-- Boxes --&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;span4&quot;&gt;
+    &lt;!-- Boxes --&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;span4&quot;&gt;
+    &lt;!-- Boxes --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+					<h4>Drag&amp;Drop elements</h4>
+					<p>Below you find the basic structure of the elements for the drag&amp;drop structure above!</p>
+					<pre class='prettyprint'>&lt;div class=&quot;span4&quot;&gt;
+  &lt;div class=&quot;box box-color box-bordered blue&quot;&gt;
+    &lt;div class=&quot;box-title&quot;&gt;
+      &lt;h3&gt;&lt;i class=&quot;icon-file&quot;&gt;&lt;/i&gt;Widget #1&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;box-content&quot;&gt;
+      Lorem ipsum Eu minim non sint sit exercitation in cillum culpa sit elit culpa commodo.
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;box box-color box-bordered red&quot;&gt;
+    &lt;div class=&quot;box-title&quot;&gt;
+      &lt;h3&gt;&lt;i class=&quot;icon-file&quot;&gt;&lt;/i&gt;Widget #2&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;box-content&quot;&gt;
+      Lorem ipsum Ut laborum irure eu quis ex proident.
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;box box-color box-bordered green&quot;&gt;
+    &lt;div class=&quot;box-title&quot;&gt;
+      &lt;h3&gt;&lt;i class=&quot;icon-file&quot;&gt;&lt;/i&gt;Widget #3&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;box-content&quot;&gt;
+      Lorem ipsum Amet amet sit dolore fugiat ullamco do. 
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+				</div>
+				<div id="filestructure">
+					<div class="page-header">
+						<h1>File structure</h1>
+					</div>
+					<h4>CSS Files</h4>
+					<p>
+						The css files are inside the <code>css/</code> folder. All css files in the <code>css/</code> folder should be included in every page. The css files from the <code>css/plugins/</code> folder depends on which plugin you use. I sorted them correctly in their plugin folder to preserve a clean and good overview because it gets really messy if you put all css files in one folder (<code>css/</code>) with that amount of plugins.
+					</p>
+					<h4>Images</h4>
+					<p>
+						Since this is a <code>flat</code> theme it doesn't use really many images. All images are inside the <code>img/</code> folder. If you want to use retina images simply add the class <code>.retina-ready</code> to the <code>img</code> element and provide an image with <code>image@2x.png</code> (<code>@2x</code> is used for the retina image). Plugin images are inside the <code>img/plugins/</code> folder and then in their plugin name folder. The folder <code>/img/demo/</code> contains images which are only for the demonstration. You are not allowed to use these images at your website.
+					</p>
+					<h4>JS Files</h4>
+					<p>
+						Javascript files are sorted like the Images and CSS files. They are inside <code>js/</code> folder. The javascript plugins are contained in the <code>js/plugins/&lt;plugin name&gt;/</code> folder. If you need to know which files you need to include please look at the example pages. If you really have no clue what you need to include contact me!
+					</p>
+				</div>
+				<div id="topbar">
+					<div class="page-header">
+						<h1>Topbar</h1>
+					</div>
+					<h4>Topbar fixed</h4>
+					<p>
+						If you didn't read the previous chapters you also skipped the possibility to make the topbar fixed. Please read again the "Layouts - Topbar fixed" section for this feature.
+					</p>
+					<h4>Topbar structure</h4>
+					<p>
+						<pre class='prettyprint'>&lt;div id=&quot;navigation&quot;&gt;
+  &lt;div class=&quot;container-fluid&quot;&gt;
+    &lt;a href=&quot;#&quot; id=&quot;brand&quot;&gt;
+      FLAT
+    &lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;toggle-nav&quot; rel=&quot;tooltip&quot; data-placement=&quot;bottom&quot; title=&quot;Toggle navigation&quot;&gt;
+      &lt;i class=&quot;icon-reorder&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;ul class='main-nav'&gt;
+      &lt;!-- Main navigation --&gt;
+    &lt;/ul&gt;
+    &lt;div class=&quot;user&quot;&gt;
+      &lt;ul class=&quot;icon-nav&quot;&gt;
+        &lt;!-- Icon buttons --&gt;
+      &lt;/ul&gt;
+      &lt;div class=&quot;dropdown&quot;&gt;
+        &lt;!-- User menu --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+					</p>
+					<h4>Top navigation structure</h4>
+					<p>
+						<pre class='prettyprint'>&lt;ul class='main-nav'&gt;
+  &lt;li&gt;
+    &lt;!-- Element --&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre>
+					</p>
+					<h4>Top navigation element</h4>
+					<pre class='prettyprint'>&lt;li&gt;
+  &lt;a href=&quot;index.html&quot;&gt;
+    &lt;i class=&quot;icon-home&quot;&gt;
+    &lt;/i&gt;
+    &lt;span&gt;
+      Dashboard
+    &lt;/span&gt;
+  &lt;/a&gt;
+&lt;/li&gt;</pre>
+					<h4>Top navigation dropdown element</h4>
+					<pre class='prettyprint'>&lt;li&gt;
+  &lt;a href=&quot;#&quot; data-toggle=&quot;dropdown&quot; class='dropdown-toggle'&gt;
+    &lt;i class=&quot;icon-edit&quot;&gt;
+    &lt;/i&gt;
+    &lt;span&gt;
+      Forms
+    &lt;/span&gt;
+    &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;ul class=&quot;dropdown-menu&quot;&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;forms-basic.html&quot;&gt;
+        Basic forms
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/li&gt;</pre>
+<h4>Multi-Level dropdown</h4>
+<p>The multi-level dropdown is already provided by bootstrap so this theme uses the bootstrap method for that feature. See the code below or go through the bootstrap documentation.</p>
+<pre class='prettyprint'>&lt;li&gt;
+  &lt;a href=&quot;more-blank.html&quot;&gt;
+    Blank page
+  &lt;/a&gt;
+&lt;/li&gt;
+&lt;li class='dropdown-submenu'&gt;
+  &lt;a href=&quot;#&quot; data-toggle=&quot;dropdown&quot; class='dropdown-toggle'&gt;
+    Another submenu
+  &lt;/a&gt;
+  &lt;ul class=&quot;dropdown-menu&quot;&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;
+        This is level 3
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;
+        Another page here
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class='dropdown-submenu'&gt;
+      &lt;a href=&quot;#&quot; data-toggle=&quot;dropdown&quot; class='dropdown-toggle'&gt;
+        Go to level 4
+      &lt;/a&gt;
+      &lt;ul class=&quot;dropdown-menu&quot;&gt;
+        &lt;li&gt;
+          &lt;a href=&quot;#&quot;&gt;
+            This is level 4
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;a href=&quot;#&quot;&gt;
+            Unlimited levels
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;a href=&quot;#&quot;&gt;
+            Easy to use
+          &lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/li&gt;</pre>
+<h4>Dropdowns on hover instead of click</h4>
+<p>
+	Simply add the attribute <code>data-trigger="hover"</code> to the <code>li</code> element!
+</p>
+					<h4>Sidebar toggle</h4>
+					<p>
+						This button is used to enable the feature to toggle the sidebar.
+						<pre class='prettyprint'>&lt;a href=&quot;#&quot; class=&quot;toggle-nav&quot; rel=&quot;tooltip&quot; data-placement=&quot;bottom&quot; title=&quot;Toggle navigation&quot;&gt;&lt;i class=&quot;icon-reorder&quot;&gt;&lt;/i&gt;&lt;/a&gt;</pre>
+					</p>
+					<h4>Icon buttons</h4>
+					<p>
+						Here you can see the default markup for an icon-button dropdown. If you don't need the dropdown remove the class <code>dropdown-toggle</code>, the <code>data-toggle</code> attribute and the <code>ul</code> element. See the 2nd code sample.
+						<pre class='prettyprint'>&lt;li class='dropdown colo'&gt;
+  &lt;a href=&quot;#&quot; class='dropdown-toggle' data-toggle=&quot;dropdown&quot;&gt;
+    &lt;i class=&quot;icon-tint&quot;&gt;
+    &lt;/i&gt;
+  &lt;/a&gt;
+  &lt;ul class=&quot;dropdown-menu pull-right theme-colors&quot;&gt;
+    &lt;li class=&quot;subtitle&quot;&gt;
+      Predefined colors
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;span class='red'&gt;
+      &lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/li&gt;</pre>
+Here you see a basic button without dropdown. This button also has a tooltip placed at the bottom.
+<pre class='prettyprint'>&lt;li&gt;
+  &lt;a href=&quot;more-locked.html&quot; class='lock-screen' rel='tooltip' title=&quot;Lock screen&quot; data-placement=&quot;bottom&quot;&gt;
+    &lt;i class=&quot;icon-lock&quot;&gt;
+    &lt;/i&gt;
+  &lt;/a&gt;
+&lt;/li&gt;</pre>
+					</p>
+					<h4>User menu</h4>
+					<p>
+						The user menu is pretty straight forward and also uses the default and well known bootstrap markup.
+						<pre class='prettyprint'>&lt;div class=&quot;dropdown&quot;&gt;
+  &lt;a href=&quot;#&quot; class='dropdown-toggle' data-toggle=&quot;dropdown&quot;&gt;
+    John Doe 
+    &lt;img src=&quot;img/demo/user-avatar.jpg&quot; alt=&quot;&quot;&gt;
+  &lt;/a&gt;
+  &lt;ul class=&quot;dropdown-menu pull-right&quot;&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;more-userprofile.html&quot;&gt;
+        Edit profile
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;
+        Account settings
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;more-login.html&quot;&gt;
+        Sign out
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
+					</p>
+				</div>
+				<div id="sidebar">
+					<div class="page-header">
+						<h1>Sidebar</h1>
+					</div>
+					<h4>Sidebar structure</h4>
+					<p>
+						<pre class='prettyprint'>&lt;div id=&quot;left&quot;&gt;
+  &lt;form action=&quot;search-results.html&quot; method=&quot;GET&quot; class='search-form'&gt;
+    &lt;!-- Search --&gt;
+  &lt;/form&gt;
+  &lt;div class=&quot;subnav&quot;&gt;
+    &lt;!-- Subnav element --&gt;
+  &lt;/div&gt;
+  
+&lt;/div&gt;</pre>
+					</p>
+					<h4>Search</h4>
+					<p>
+						<pre class='prettyprint'>&lt;div class=&quot;search-pane&quot;&gt;
+  &lt;input type=&quot;text&quot; name=&quot;search&quot; placeholder=&quot;Search here...&quot;&gt;
+  &lt;button type=&quot;submit&quot;&gt;
+    &lt;i class=&quot;icon-search&quot;&gt;
+    &lt;/i&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</pre>
+					</p>
+					<h4>Sidebar elements</h4>
+					<p>
+						<pre class='prettyprint'>&lt;div class=&quot;subnav&quot;&gt;
+  &lt;div class=&quot;subnav-title&quot;&gt;
+    &lt;a href=&quot;#&quot; class='toggle-subnav'&gt;
+      &lt;i class=&quot;icon-angle-down&quot;&gt;&lt;/i&gt;
+      &lt;span&gt;
+        Content
+      &lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;ul class=&quot;subnav-menu&quot;&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;
+        Articles
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;
+        News
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;
+        Pages
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;
+        Comments
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
+					</p>
+					<h4>Sidebar widgets</h4>
+					To create and use sidebar widgets follow the markup below:
+					<pre class='prettyprint'>&lt;div class=&quot;subnav&quot;&gt;
+  &lt;div class=&quot;subnav-title&quot;&gt;
+    &lt;a href=&quot;#&quot; class='toggle-subnav'&gt;
+      &lt;i class=&quot;icon-angle-down&quot;&gt;&lt;/i&gt;
+      &lt;span&gt;
+        Balance
+      &lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;subnav-content&quot;&gt;
+   CONTENT
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+				</div>
+				<div id="forms">
+					<div class="page-header">
+						<h1>Forms</h1>
+					</div>
+					<h4>Basic form structure</h4>
+					<p>
+						The theme uses the default bootstrap form structure. To read more about it head over to the bootstrap documentation page here: <a href="http://twitter.github.com/bootstrap/base-css.html#forms">http://twitter.github.com/bootstrap/base-css.html#forms</a>.
+					</p>
+					<h4>Bordered form</h4>
+					<p>
+						If you want the form bordered and custom styled use the class <code>form-bordered</code>
+						<pre class='prettyprint'>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class='form-horizontal form-bordered'&gt;</pre>
+					</p>
+					<h4>Striped</h4>
+					<p>
+						If you want the form bordered and custom styled use the class <code>form-striped</code>
+						<pre class='prettyprint'>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class='form-striped'&gt;</pre>
+					</p>
+					<h4>Vertical</h4>
+					<p>
+						If you want the form bordered and custom styled use the class <code>form-vertical</code>
+						<pre class='prettyprint'>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class='form-vertical'&gt;</pre>
+					</p>
+					<h4>Colored form</h4>
+					<p>
+						Colored form are bordered forms inside a colored widget. See their parts in the documentation or look at the basic forms page.
+					</p>
+					<h4>Column form</h4>
+					<p>
+						<pre class='prettyprint'>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class='form-horizontal form-column'&gt;</pre>
+						The complete structure can be found below. Of course you can use other grid-sizes. This column form also uses the grid system from bootstrap. However I wouldn't suggest to use more columns than 2. It will look messy, therefore I would use form wizards.
+						<pre class='prettyprint'>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class='form-horizontal form-column'&gt;
+  &lt;div class=&quot;span6&quot;&gt;
+    &lt;!-- Column 1 form elements --&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;span6&quot;&gt;
+    &lt;!-- Column 2 form elements --&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;span12&quot;&gt;
+    &lt;div class=&quot;form-actions&quot;&gt;
+      &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;
+        Save changes
+      &lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn&quot;&gt;
+        Cancel
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</pre>
+					</p>
+					<h4>Validation</h4>
+					<p>
+						You don't need any own javascript to validate your forms. Add the class <code>form-validate</code> to you form and use the <code>data-*</code> attributes. Go through the validation page to see some rules or visit the plugins page.
+
+						<pre class='prettyprint'>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class='form-horizontal form-bordered form-validate'&gt;
+  &lt;div class=&quot;control-group&quot;&gt;
+    &lt;label for=&quot;t&quot; class=&quot;control-label&quot;&gt;
+      Text input
+    &lt;/label&gt;
+    &lt;div class=&quot;controls&quot;&gt;
+      &lt;input type=&quot;text&quot; name=&quot;t&quot; id=&quot;t&quot; data-rule-required=&quot;true&quot; data-rule-minlength=&quot;2&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</pre>
+					</p>
+					<h4>Wizard</h4>
+					<p>
+						The class <code>steps-X</code> is used for the number of steps. That is needed to calculate the width of the step-elements correctly. So if you want 2 steps simply use the class <code>steps-2</code>. I predefined 5 classes <code>steps-1</code>..to..<code>steps-5</code>.
+
+Every step needs its unique id. Inside the step is the step overview (<code>wizard-steps</code>). If you don't need an overview you can leave it out. Steps can also be validated using the form validation from above.
+
+<pre class='prettyprint'>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class='form-horizontal form-wizard' id=&quot;ss&quot;&gt;
+  &lt;div class=&quot;step&quot; id=&quot;firstStep&quot;&gt;
+    &lt;!-- First step --&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;step&quot; id=&quot;secondStep&quot;&gt;
+    &lt;!-- Second step --&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;step&quot; id=&quot;thirdStep&quot;&gt;
+    &lt;!-- Third step --&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-actions&quot;&gt;
+    &lt;input type=&quot;reset&quot; class=&quot;btn&quot; value=&quot;Back&quot; id=&quot;back&quot;&gt;
+    &lt;input type=&quot;submit&quot; class=&quot;btn btn-primary&quot; value=&quot;Submit&quot; id=&quot;next&quot;&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</pre>
+					</p>
+					<h4>Vertical wizard</h4>
+					<pre class='prettyprint'>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class='form-horizontal form-wizard wizard-vertical' id=&quot;ss&quot;&gt;</pre>
+					<h4>Wizard step</h4>
+					<p>
+						Below you will find the markup for a single step. If you have more steps simply add more <code>li</code> elements to the <code>wizard-steps</code> element. The <code>.active</code> classes are needed to indicate the current selected/active step.
+						<pre class='prettyprint'>&lt;div class=&quot;step&quot; id=&quot;firstStep&quot;&gt;
+  &lt;ul class=&quot;wizard-steps steps-3&quot;&gt;
+    &lt;li class='active'&gt;
+      &lt;div class=&quot;single-step&quot;&gt;
+        &lt;span class=&quot;title&quot;&gt;
+          1
+        &lt;/span&gt;
+        &lt;span class=&quot;circle&quot;&gt;
+          &lt;span class=&quot;active&quot;&gt;
+          &lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span class=&quot;description&quot;&gt;
+          Basic information
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div class=&quot;control-group&quot;&gt;
+    &lt;label for=&quot;additionalfield&quot; class=&quot;control-label&quot;&gt;
+      Additional information
+    &lt;/label&gt;
+    &lt;div class=&quot;controls&quot;&gt;
+      &lt;input type=&quot;text&quot; name=&quot;additionalfield&quot; id=&quot;additionalfield&quot; class=&quot;input-xlarge&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+					</p>
+					<h4>Advanced elements</h4>
+					<p>
+						All the advanced elements seen on the sample page use the default bootstrap markup. Specifically the <code>Prepended/Appended input</code> together with <code>Icons and buttons</code>. Read the bootstrap documentation for more knowledge: <a href="http://twitter.github.com/bootstrap/base-css.html#forms">http://twitter.github.com/bootstrap/base-css.html#forms</a>.
+					</p>
+					<h4>Tags input</h4>
+					<p>
+						<pre class='prettyprint'>&lt;div class=&quot;span12&quot;&gt;
+  &lt;input type=&quot;text&quot; name=&quot;textfield&quot; id=&quot;textfield&quot; class=&quot;tagsinput&quot; value=&quot;PHP,Laravel,Java&quot;&gt;
+&lt;/div&gt;</pre>
+					</p>
+					<h4>Select with search</h4>
+					<p>
+						<pre class='prettyprint'>&lt;div class=&quot;input-xlarge&quot;&gt;
+  &lt;select name=&quot;select&quot; id=&quot;select&quot; class='chosen-select'&gt;
+    &lt;option value=&quot;1&quot;&gt;
+      Option-1
+    &lt;/option&gt;
+    &lt;option value=&quot;2&quot;&gt;
+      Option-2
+    &lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;
+      Option-3
+    &lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;</pre>
+					</p>
+					<h4>Multiple select</h4>
+					<p>
+						<pre class='prettyprint'>&lt;select name=&quot;a&quot; id=&quot;a&quot; multiple=&quot;multiple&quot; class=&quot;chosen-select input-xxlarge&quot;&gt;
+  &lt;option value=&quot;1&quot;&gt;
+    Option-1
+  &lt;/option&gt;
+  &lt;option value=&quot;2&quot;&gt;
+    Option-2
+  &lt;/option&gt;
+&lt;/select&gt;</pre>
+					</p>
+					<h4>Spinner</h4>
+					<p>
+						The spinner uses the default jQuery UI spinner widget.
+						<pre class='prettyprint'>&lt;input type=&quot;text&quot; name=&quot;textfield&quot; id=&quot;textfield&quot; value=&quot;3&quot; class=&quot;spinner input-mini&quot;&gt;</pre>
+					</p>
+					<h4>Custom file upload</h4>
+					<p>
+						Take a look at the plugin page if you want more examples (image preview etc..)
+						<pre class='prettyprint'>&lt;div class=&quot;fileupload fileupload-new&quot; data-provides=&quot;fileupload&quot;&gt;
+  &lt;div class=&quot;input-append&quot;&gt;
+    &lt;div class=&quot;uneditable-input span3&quot;&gt;
+      &lt;i class=&quot;icon-file fileupload-exists&quot;&gt;
+      &lt;/i&gt;
+      
+      &lt;span class=&quot;fileupload-preview&quot;&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;span class=&quot;btn btn-file&quot;&gt;
+      &lt;span class=&quot;fileupload-new&quot;&gt;
+        Select file
+      &lt;/span&gt;
+      &lt;span class=&quot;fileupload-exists&quot;&gt;
+        Change
+      &lt;/span&gt;
+      &lt;input type=&quot;file&quot; /&gt;
+    &lt;/span&gt;
+    &lt;a href=&quot;#&quot; class=&quot;btn fileupload-exists&quot; data-dismiss=&quot;fileupload&quot;&gt;
+      Remove
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+					</p>
+					<h4>Dual multiselect</h4>
+					<p>
+						<pre class='prettyprint'>&lt;select multiple=&quot;multiple&quot; id=&quot;my-select&quot; name=&quot;my-select[]&quot; class='multiselect'&gt;
+  &lt;option value='elem_1'&gt;
+    elem 1
+  &lt;/option&gt;
+  &lt;option value='elem_2'&gt;
+    elem 2
+  &lt;/option&gt;
+&lt;/select&gt;</pre>
+					</p>
+					<h4>Range slider</h4>
+					<p>
+						The range slider has various options which can be achieved via html attributes. If you want a slider with 2 handles (ranged slider) you need the attributes <code>data-range</code>, <code>data-rangestart</code> and <code>data-rangestop</code>. The <code>data-rangestart</code> and <code>data-rangestop</code> are the default values of the ranged slider - set the <code>data-range</code> to <code>"true"</code>. Other attributes are <code>data-max</code>, <code>data-step</code> and <code>data-min</code>. Those attributes are pretty self explanatory.
+						<pre class='prettyprint'>&lt;div class=&quot;slider&quot; data-step=&quot;25&quot; data-min=&quot;0&quot; data-max=&quot;250&quot;&gt;
+  &lt;div class=&quot;amount&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;slide&quot;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+					</p>
+					<h4>Styled checkboxes/radios (iCheck)</h4>
+					<p>
+						In order to use the awesome styled and customized checkboxes provided by the plugin <code>iCheck</code>. You have to use the class <code>icheck-me</code> on the <code>checkbox/radio</code> element! You can use the attribute <code>data-skin="square"</code> to set the skin to square (or whatever skin you want to use). Therefore you can also use the attribute <code>data-color="blue"</code> to set the color. Go to the plugins page documentation to know more about this awesome plugin!
+					</p>
+					<h4>Select2</h4>
+					<p>
+						In order to use the awesome select2 plugin you have to add the class <code>select2-me</code> to you <code>select</code> element! For more information about usage and options please visit the plugins documentation.
+					</p>
+					<h4>Masked inputs</h4>
+					<p>
+						Masked inputs are handled via javascript. Basic jQuery knowledge is needed. Here is the javascript code for the <code>date</code> input. Below you will find the html markup. A <code>9</code> stands for any number and an <code>A</code> stays for any alpha character.
+						<pre class='prettyprint'>if($('.mask_date').length &gt; 0){
+  $(&quot;.mask_date&quot;).mask(&quot;9999/99/99&quot;);	
+}</pre>
+						<pre class='prettyprint'>&lt;input type=&quot;text&quot; name=&quot;textfield&quot; id=&quot;textfield&quot; class=&quot;input-xlarge mask_date&quot;&gt;</pre>
+					</p>
+					<h4>Datepicker</h4>
+					<p>
+						<pre class='prettyprint'>&lt;input type=&quot;text&quot; name=&quot;textfield&quot; id=&quot;textfield&quot; class=&quot;input-medium datepick&quot;&gt;</pre>
+					</p>
+					<h4>Daterange picker</h4>
+					<p>
+						<pre class='prettyprint'>&lt;input type=&quot;text&quot; name=&quot;textfield&quot; id=&quot;textfield&quot; class=&quot;input-large daterangepick&quot;&gt;</pre>
+					</p>
+					<h4>Username available?</h4>
+					<p>
+						If you want to use the username available form element you have to adjust some things in javascript. In the application.js on line #296 you will find an AJAX request (jQuerys $.post()). You have to adjust the URL which is currently "/check" (uses mockjax to simulate an answer). Your URL should return JSON with the key 'available'. That should be "true" if the username is free and otherwise it will show an error. Of course you could change that behaviour if you have the js skills.
+					</p>
+					<h4>Colorpicker</h4>
+					<p>
+						<pre class='prettyprint'>&lt;input type=&quot;text&quot; name=&quot;textfield&quot; id=&quot;textfield&quot; class=&quot;input-medium colorpick&quot;&gt;</pre>
+					</p>
+					<h4>Timepicker</h4>
+					<p>
+						<pre class='prettyprint'>&lt;input type=&quot;text&quot; name=&quot;textfield&quot; id=&quot;textfield&quot; class=&quot;input-medium timepick&quot;&gt;</pre>
+					</p>
+					<h4>WYSIWYG (CKEditor)</h4>
+					<p>
+						You can set up which buttons should be shown and which features should be enabled. Look at the plugin documentation for further infos.
+						<pre class='prettyprint'>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class='form-wysiwyg'&gt;
+  &lt;textarea name=&quot;ck&quot; class='ckeditor span12' rows=&quot;5&quot;&gt;&lt;/textarea&gt;
+&lt;/form&gt;</pre>
+					</p>
+					<h4>Multi file upload</h4>
+					<p>
+						To get the multi file upload to work correctly you need to adjust the path to the <code>php</code> script which handles the upload. Take a look at the plugin site and read their documentation.
+						<pre class='prettyprint'>&lt;div class=&quot;plupload&quot;&gt;&lt;/div&gt;</pre>
+					</p>
+				</div>
+				<div id="tables">
+					<div class="page-header">
+						<h1>Tables</h1>
+					</div>
+					<h4>Basic table</h4>
+					<p>
+						The default bootstrap table markup is also used in this template. Read more at it here : <a href="http://twitter.github.com/bootstrap/base-css.html#tables">http://twitter.github.com/bootstrap/base-css.html#tables</a>.
+					</p>
+					<h4>Colored box table</h4>
+					<p>
+						The colored box table is done with the colored widget and a basic table.
+					</p>
+					<h4>Bordered table</h4>
+					<p>
+						The class <code>table-nomargin</code> is used to remove the bottom-margin of the bootstrap table. If you use the bordered widget I would also use this class.
+						<pre class='prettyprint'>&lt;table class=&quot;table table-bordered table-nomargin&quot;&gt;
+  &lt;!-- Table content --&gt;
+&lt;/table&gt;</pre>
+					</p>
+					<h4>Colored header table</h4>
+					<p>
+						<pre class='prettyprint'>&lt;table class=&quot;table table-colored-header&quot;&gt;
+  &lt;!-- Table content --&gt;
+&lt;/table&gt;</pre>
+					</p>
+					<h4>Striped table</h4>
+					<p>
+						<pre class='prettyprint'>&lt;table class=&quot;table table-striped&quot;&gt;
+  &lt;!-- Table content --&gt;
+&lt;/table&gt;</pre>
+					</p>
+					<h4>Condensed table</h4>
+					<p>
+						<pre class='prettyprint'>&lt;table class=&quot;table table-condensed&quot;&gt;
+  &lt;!-- Table content --&gt;
+&lt;/table&gt;</pre>
+					</p>
+					<h4>Dynamic table</h4>
+					<p>
+						<pre class='prettyprint'>&lt;table class=&quot;table table-nomargin dataTable table-bordered&quot;&gt;
+  &lt;!-- Table content --&gt;
+&lt;/table&gt;</pre>
+					</p>
+					<h4>Sortable table</h4>
+					<p>
+						The only-sortable table removes the header and footer of the dynamic table. You can also either disable only the header or only to footer. Just remove the specific class to achieve that.
+						<pre class='prettyprint'>&lt;table  class=&quot;table-nomargin table-bordered dataTable dataTable-noheader dataTable-nofooter&quot;&gt;
+  &lt;!-- Table content --&gt;
+&lt;/table&gt;</pre>
+					</p>
+					<h4>Table tools</h4>
+					<p>
+						The TableTools plugin for dataTables provides you with extra buttons : Copy the table, CSV export, Excel export, PDF export and a print function. You can also define more buttons or modify existing ones. Read the plugin page for these features.
+						<pre class='prettyprint'>&lt;table  class=&quot;table table-nomargin dataTable dataTable-tools table-bordered&quot;&gt;
+  &lt;!-- Table content --&gt;
+&lt;/table&gt;</pre>
+					</p>
+					<h4>Column reorder</h4>
+					<p>
+						The plugin Column reorder gives you the feautre to drag and drop table columns to achieve a different column order. Useful for great user experience.
+						<pre class='prettyprint'>&lt;table  class=&quot;table table-nomargin table-striped dataTable dataTable-reorder&quot;&gt;
+  &lt;!-- Table content --&gt;
+&lt;/table&gt;</pre>
+					</p>
+					<h4>Horizontal scrollable</h4>
+					<p>
+						If you need many columns and always had the problem that they are just too many for a normal site the horizontal scrollable table will help you out with that problem.
+						<pre class='prettyprint'>&lt;table  class=&quot;table table-nomargin dataTable table-bordered dataTable-scroll-x&quot;&gt;
+  &lt;!-- Table content --&gt;
+&lt;/table&gt;</pre>
+					</p>
+					<h4>Vertical scrollable</h4>
+					<p>
+						If you don't want the pagination and want a vertical scrollable table instead use this snippet.
+						<pre class='prettyprint'>&lt;table  class=&quot;table table-nomargin dataTable table-bordered dataTable-scroll-y&quot;&gt;
+  &lt;!-- Table content --&gt;
+&lt;/table&gt;</pre>
+					</p>
+					<h4>Fixed first column</h4>
+					<p>
+						Often your data inside tables has a primary key. The fixed first column is a great feature to sustain the great overview of the table and don't miss the key column. It will be fixed and highlighted. Therefore you can read and find specific rows and columns way faster.
+						<pre class='prettyprint'>&lt;table  class=&quot;table table-nomargin table-bordered dataTable dataTable-fixedcolumn dataTable-scroll-x dataTable-scroll-y&quot;&gt;
+  &lt;!-- Table content --&gt;
+&lt;/table&gt;</pre>
+					</p>
+					<h4>Dynamic ajax loading</h4>
+					<p>
+						This feature will help a lot of developers. There is often a table with just such a huge amount of data that the html is bloated up and the page loading time went down dramatically. With the dynamic ajax loading feature of dataTables this problem is solved! The data can be fetched via javascript, json or a simple txt file. Only the currently visible rows are rendered in html that's why even the sample page with 2500 table records is extremly fast.
+						<pre class='prettyprint'>&lt;table  class=&quot;table table-nomargin dataTable table-bordered dataTable-scroller&quot;&gt;
+  &lt;!-- Table content --&gt;
+&lt;/table&gt;</pre>
+					</p>
+				</div>
+				<div id="components">
+					<div class="page-header">
+						<h1>Components</h1>
+					</div>
+					<h4>Gallery</h4>
+					<p>
+						The gallery provides a lightbox-like view of images and an image-grid. You also get hoverable images.
+						The class <code>colorbox-image</code> gives the link the lightbox-like view. If it has the attribute <code>rel</code> and other <code>colorbox-image</code> elements also get this <code>rel</code> attribute it will result in a gallery like view (next/prev) buttons.
+						<pre class='prettyprint'>&lt;ul class=&quot;gallery&quot;&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot;&gt;
+      &lt;img src=&quot;img/demo/1.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/a&gt;
+    &lt;div class=&quot;extras&quot;&gt;
+      &lt;div class=&quot;extras-inner&quot;&gt;
+        &lt;a href=&quot;img/demo/big/1.jpg&quot; class='colorbox-image' rel=&quot;group-1&quot;&gt;
+          &lt;i class=&quot;icon-search&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;
+          &lt;i class=&quot;icon-pencil&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+        &lt;a href=&quot;#&quot; class='del-gallery-pic'&gt;
+          &lt;i class=&quot;icon-trash&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre>
+					</p>
+					<h4>Dynamic position gallery</h4>
+					<p>
+						You can use the dynamic gallery with the same markup like above. You simply need to add the class <code>gallery-dynamic</code> to the <code>ul</code> element. That's it!
+					</p>
+					<h4>Tiles</h4>
+					<p>
+						There are several different options for tiles. First you will see the basic known from windows phone 8 like tiles. Please take a look at the sample page to understand all elements and their settings.
+						<pre class='prettyprint'>&lt;ul class=&quot;tiles&quot;&gt;
+  &lt;li class=&quot;orange high long&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;
+      &lt;span class='count'&gt;&lt;i class=&quot;icon-shopping-cart&quot;&gt;&lt;/i&gt;8&lt;/span&gt;
+      &lt;span class='name'&gt;New orders&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;blue&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;
+      &lt;span&gt;&lt;i class=&quot;icon-phone&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+      &lt;span class='name'&gt;Phone&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre>
+					</p>
+					<p>
+						Now you will see the markup of the small elements which are used in the page-header.
+						<pre class='prettyprint'>&lt;ul class=&quot;minitiles&quot;&gt;
+  &lt;li class='teal'&gt;
+    &lt;a href=&quot;#&quot;&gt;
+      &lt;i class=&quot;icon-inbox&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class='red'&gt;
+    &lt;a href=&quot;#&quot;&gt;
+      &lt;i class=&quot;icon-cogs&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class='lime'&gt;
+    &lt;a href=&quot;#&quot;&gt;
+      &lt;i class=&quot;icon-globe&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre>
+					</p>
+					<p>
+						Below you will find the markup for the page-header live statistic tiles.
+						<pre class='prettyprint'>&lt;ul class=&quot;stats&quot;&gt;
+  &lt;li class='blue'&gt;
+    &lt;i class=&quot;icon-shopping-cart&quot;&gt;
+    &lt;/i&gt;
+    &lt;div class=&quot;details&quot;&gt;
+      &lt;span class=&quot;big&quot;&gt;
+        175
+      &lt;/span&gt;
+      &lt;span&gt;
+        New orders
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre>
+					</p>
+					<h4>Icons &amp; buttons</h4>
+					<p>
+						All buttons are done with the default bootstrap button markup. Read more about it here: <a href="http://twitter.github.com/bootstrap/base-css.html#buttons">http://twitter.github.com/bootstrap/base-css.html#buttons</a>. Their design is adjusted to the theme (see sample page).
+					</p>
+					<p>
+						The bootstrap icons are replaced by the FontAwesome Icon font. It gives you  about 250 icons in just one font. They scale perfectly for retina (because they are a font and not an image).
+					</p>
+					<h4>Glyphicons</h4>
+					<p>
+						In order to use glyphicons you simply need the markup below. You can of course replace the <code>user</code> with the icon you want. For all icons just go to the glyphicons page or look at the icon and their names in the icons&amp;buttons page.
+					</p>
+					<pre class="prettyprint">&lt;i class=&quot;glyphicon-user&quot;&gt;</pre>
+					<h4>Template color buttons</h4>
+					<p>Simply add the class <code>btn-COLOR</code> to a <code>.btn</code> element in order to colorize it. All template-colors are available. <code>btn-red</code> would make a btn to be red colored.</p>
+					<h4>Tabs</h4>
+					<p>
+						The buttons in the <code>box-title</code> are done with this snippet.
+						<pre class='prettyprint'>&lt;div class=&quot;box-title&quot;&gt;
+  &lt;h3&gt;
+    &lt;i class=&quot;icon-reorder&quot;&gt;
+    &lt;/i&gt;
+    Colored widget
+  &lt;/h3&gt;
+  &lt;ul class=&quot;tabs&quot;&gt;
+    &lt;li class=&quot;active&quot;&gt;
+      &lt;a href=&quot;#t7&quot; data-toggle=&quot;tab&quot;&gt;
+        Sample tab #1
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
+					</p>
+					<p>
+						You also need a <code>tab-content</code> container with the <code>tab-pane</code> contents which also need a unique ID.
+
+						<pre class='prettyprint'>&lt;div class=&quot;tab-content&quot;&gt;
+  &lt;div class=&quot;tab-pane active&quot; id=&quot;t7&quot;&gt;
+    &lt;h4&gt;
+      First tab
+    &lt;/h4&gt;
+    Lorem ipsum anim ad culpa ex id anim Excepteur esse et do cillum dolor in dolore cillum. Lorem ipsum Ut est consequat pariatur sint ut incididunt nisi dolore occaecat. 
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+					</p>
+					<h4>Modals</h4>
+					<p>
+						The theme uses default bootstrap markup for modals. Therefore you just need to headover to the bootstrap documentation for modals: <a href="http://twitter.github.com/bootstrap/javascript.html#modals">http://twitter.github.com/bootstrap/javascript.html#modals</a>.
+					</p>
+					<h4>Notifications</h4>
+					<p>
+						Below you will find a basic notfiy button. add the class <code>notfiy</code> to any button/link element and use <code>data-*</code> attributes to specify the content, title etc. There are these data-attributes available: <code>data-notify-title</code>, <code>data-notify-message</code>, <code>data-notify-time</code> (time before fadeout), <code>data-notify-sticky</code> (remove timer, need user interaction to close). I guess these attributes are also self explanatory.
+						<pre class='prettyprint'>&lt;a href=&quot;#modal-1&quot; role=&quot;button&quot; class=&quot;btn notify&quot; data-notify-title=&quot;Success!&quot; data-notify-message=&quot;The user has been successfully edited.&quot;&gt;Basic notification&lt;/a&gt;</pre>
+					</p>
+					<h4>Tooltips</h4>
+					<p>
+						Read the bootstrap documentation to know everything about bootstrap tooltips and how to configure them.
+						<pre class='prettyprint'>&lt;a href=&quot;#&quot; class=&quot;btn&quot; rel=&quot;tooltip&quot; title=&quot;Default Tooltip&quot;&gt;Default tooltip&lt;/a&gt;</pre>
+					</p>
+					<h4>Popovers</h4>
+					<p>
+						FLAT uses the default bootstrap popover method. See the example below or read the bootstrap documentation.
+						<pre class='prettyprint'>&lt;a href=&quot;#&quot; class=&quot;btn&quot; rel=&quot;popover&quot; data-trigger=&quot;hover&quot; title=&quot;Default popover&quot; data-content=&quot;Lorem ipsum et dolor aute deserunt nisi do. Lorem ipsum irure aute officia id pariatur ex adipisicing deserunt velit consequat cupidatat adipisicing commodo. Lorem ipsum ad fugiat velit elit et non id. &quot;&gt;Default popover&lt;/a&gt;</pre>
+					</p>
+					<h4>Accordion</h4>
+					<p>
+						Also the accordion is adopted from bootstrap. Head over to their documentation : <a href="http://twitter.github.com/bootstrap/javascript.html#collapse">http://twitter.github.com/bootstrap/javascript.html#collapse</a>
+						<pre class='prettyprint'>&lt;div class=&quot;accordion&quot; id=&quot;accordion2&quot;&gt;
+  &lt;div class=&quot;accordion-group&quot;&gt;
+    &lt;div class=&quot;accordion-heading&quot;&gt;
+      &lt;a class=&quot;accordion-toggle&quot; data-toggle=&quot;collapse&quot; data-parent=&quot;#accordion2&quot; href=&quot;#collapseOne&quot;&gt;
+        Collapsible Group Item #1
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;collapseOne&quot; class=&quot;accordion-body collapse in&quot;&gt;
+      &lt;div class=&quot;accordion-inner&quot;&gt;
+        Anim pariatur cliche...Lorem ipsum dolore dolor occaecat dolore elit deserunt incididunt ex sed nostrud aute aliquip ut elit sed nisi. 
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+					</p>
+				</div>
+				<div id="plugins">
+					<div class="page-header">
+						<h1>Plugins</h1>
+					</div>
+					<h4>Charts</h4>
+					<p>
+						The basic line/bar/pie charts are done with the jQuery plugin flot. There is way to much configuration that I could list it here. I refer to the plugin documentation which is found here: <a href="https://github.com/flot/flot/wiki">https://github.com/flot/flot/wiki</a>. Read through it to get an overview of the charts and how to use them. 
+					</p>
+					<h4>Calendar</h4>
+					<p>
+						<pre class='prettyprint'>&lt;div class=&quot;calendar&quot;&gt;&lt;/div&gt;</pre>
+					</p>
+					<h4>Filemanager</h4>
+					<p>
+						<pre class='prettyprint'>&lt;div class=&quot;file-manager&quot;&gt;&lt;/div&gt;</pre>
+					</p>
+					<h4>Filetrees</h4>
+					<p>
+						You can either use pure javascript or pure html to setup the filetrees (or a mix). I used the HTML setup method. Below you will find basic markup but if you want to use filetrees I would suggest to read the plugins documentation.
+						<pre class='prettyprint'>&lt;div class=&quot;filetree&quot;&gt;
+  &lt;ul&gt;
+    &lt;li id=&quot;key1&quot; title=&quot;Look, a tool tip!&quot;&gt;
+      item1 with key and tooltip
+    &lt;/li&gt;
+    &lt;li id=&quot;key3&quot; class=&quot;folder&quot;&gt;
+      Folder with some children
+      &lt;ul&gt;
+        &lt;li id=&quot;key3.1&quot;&gt;
+          Sub-item 3.1
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;key4&quot; class=&quot;expanded&quot;&gt;
+      Document with some children (expanded on init)
+      &lt;ul&gt;
+        &lt;li id=&quot;key4.1&quot;&gt;
+          Sub-item 4.1
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
+					</p>
+					<h4>Editable elements</h4>
+					<p>
+						Editable elements are extremly user-friendly and provide a great user-experience. However they are not that easy to setup. You should have basic knowledge about ajax/jQuery etc. Please read the plugins documentation on how to set this awesome plugin up. It provides just a great way to edit elements without specific templates.
+					</p>
+					<h4>Maps</h4>
+					<p>
+						Read the gmap3 plugin documentation if you want to use these maps on you site. The plugin is based on the google maps api v3.
+					</p>
+					<h4>Tasklist</h4>
+					<p>
+						The task list is great for keeping overview and getting thing done. You can add and delete tasks pretty easily. Below you will find the markup for the <code>tasklist</code>. There is also one element included. The <code>li</code> element can have the class bookmarked for making it bookmarked/important. It will appear on top in the list. The <code>li</code> element could also have the class <code>done</code>. That will make a crossthrough line in the text and highlight it as 'done'. The add a new task is in the demonstration handled via a bootstrap modal. You can of course use this feature or just write your own ones. I would suggest you to use select2 for the icon dropdown (as I did in the demonstration). It it simply the best and most user-friendly method to achieve that.
+					</p>
+					<pre class='prettyprint'>&lt;ul class=&quot;tasklist&quot;&gt;
+  &lt;li&gt;
+    &lt;label class='checkbox'&gt;
+      &lt;input type=&quot;checkbox&quot;&gt;
+    &lt;/label&gt;
+    &lt;span class=&quot;task&quot;&gt;
+      &lt;i class=&quot;icon-bar-chart&quot;&gt;
+      &lt;/i&gt;
+      &lt;span&gt;
+        Check statistics
+      &lt;/span&gt;
+    &lt;/span&gt;
+    &lt;span class=&quot;task-actions&quot;&gt;
+      &lt;a href=&quot;#&quot; class='task-delete' rel=&quot;tooltip&quot; title=&quot;Delete that task&quot;&gt;
+        &lt;i class=&quot;icon-remove&quot;&gt;
+        &lt;/i&gt;
+      &lt;/a&gt;
+      &lt;a href=&quot;#&quot; class='task-bookmark' rel=&quot;tooltip&quot; title=&quot;Mark as important&quot;&gt;
+        &lt;i class=&quot;icon-bookmark-empty&quot;&gt;
+        &lt;/i&gt;
+      &lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre>
+				</div>
+				<div id="pages">
+					<div class="page-header">
+						<h1>Pages</h1>
+					</div>
+					<h4>Email Template</h4>
+					<p>
+						The email template provides a solid way to inform your clients about any backend actions. Every backend will send emails and therefore this template is a great start. The email templates are based on the HTML Email Boilerplate which you can find here: <a href="htmlemailboilerplate.com">htmlemailboilerplate.com</a>
+					</p>
+					<p>
+						If you wonder why that template uses the table-layout style and inline CSS attributes it's fairly simple to explain. Every email client handles incoming emails and their style differently. There are many clients who only handle these old styles and because of that it is always the best to stick to this old layout. 
+					</p>
+					<h4>Email template: Images</h4>
+					<p>
+						In order to provide images like I did you need to set a Full-Path to the image. Relative paths won't work (which should be totally as a matter of course). I didn't set full-path because probably many of the buyers will forget to replace my full-path with theirs and then my Server will get traffic from your email readers which could result in a downtime. I wanted to prevent this by not setting a full-path. 
+					</p>
+					<h4>Email template Color</h4>
+					<p>
+						I created the email templates in every predefined color to make your life easier. Simply use the color you want and your are ready to go!
+					</p>
+					<h4>Newsletter Email template</h4>
+					<p>
+						The newsletter email template provides a good way to start your own newsletter without much work. The newsletter email template uses Z-Positioned elements. Statistics have shown that Z-Styling is more user-friendly than default I-styling (everything straight below). Therefore that newsletter will be read more frequently and your project/product shines even more!
+					</p>
+					<h4>Pricing tables</h4>
+					<p>
+						The markup of pricing tables is pretty self-explanatory. 
+					</p>
+					<pre class='prettyprint'>&lt;ul class=&quot;pricing green span3&quot;&gt;
+  &lt;li class=&quot;head&quot;&gt;
+    &lt;div class=&quot;name&quot;&gt;
+      Medium
+    &lt;/div&gt;
+    &lt;div class=&quot;price&quot;&gt;
+      $15
+      &lt;span&gt;per month&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;100 GB HDD&lt;/li&gt;
+  &lt;li&gt;&lt;i class=&quot;icon-ok&quot;&gt;&lt;/i&gt; Free setup&lt;/li&gt;
+  &lt;li&gt;&lt;i class=&quot;icon-ok&quot;&gt;&lt;/i&gt; 30 Day free trial&lt;/li&gt;
+  &lt;li class=&quot;button&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;btn btn-green&quot;&gt;Sign up&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre>
+					<h4>Highlight a column in pricing tables</h4>
+					<p>
+						Add the class <code>highlighted</code> to the <code>pricing</code> element.
+					</p>
+					<h4>
+						Shop list
+					</h4>
+					<p>
+						The shop list gives you a fast markup for a shop. It uses default bootstrap features together with theme features. The sidebar uses some sidebar widgets which will be described below. The list has some filter functions which are easy to implement. See the basic markup below. The fixed layout is used in the shop systems because you normally don't have a wide/liquid shop. You could also do this without any problem. Below you will find the markup for a single item in the list
+					</p>
+					<pre class='prettyprint'>&lt;li class=&quot;span3&quot;&gt;
+  &lt;a href=&quot;more-shop-product.html&quot;&gt;
+    &lt;img src=&quot;img/demo/shop/4.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;div class=&quot;details&quot;&gt;
+      &lt;div class=&quot;name&quot;&gt;
+        Simple jeans
+      &lt;/div&gt;
+      &lt;div class=&quot;price&quot;&gt;
+        $25.00
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+  &lt;div class=&quot;extended&quot;&gt;
+    &lt;div class=&quot;pull-left&quot;&gt;
+      &lt;ul class=&quot;colors small&quot;&gt;
+        &lt;li class=&quot;red&quot;&gt;
+          &lt;a href=&quot;#&quot;&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;pink&quot;&gt;
+          &lt;a href=&quot;#&quot;&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;lightgrey&quot;&gt;
+          &lt;a href=&quot;#&quot;&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;pull-right&quot;&gt;
+      &lt;a href=&quot;#&quot; rel='tooltip' title=&quot;Add to cart&quot;&gt;
+        &lt;i class=&quot;icon-shopping-cart&quot;&gt;
+        &lt;/i&gt;
+      &lt;/a&gt;
+      &lt;a href=&quot;#&quot; rel='tooltip' title=&quot;Add to whishlist&quot;&gt;
+        &lt;i class=&quot;icon-cloud&quot;&gt;
+        &lt;/i&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/li&gt;</pre>
+					<h4>Sidebar Price range widget</h4>
+					<pre class='prettyprint'>&lt;div class=&quot;slider&quot; data-min=&quot;0&quot; data-max=&quot;75&quot; data-range=&quot;true&quot; data-rangestart=&quot;15&quot; data-rangestop=&quot;45&quot;&gt;
+  &lt;div class=&quot;amount_min&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;amount_max&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;slide&quot;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+					<h4>Sidebar best seller widget</h4>
+					<pre class='prettyprint'>&lt;ul class=&quot;bestseller&quot;&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot;&gt;
+      &lt;img src=&quot;img/demo/shop/1.jpg&quot; alt=&quot;&quot;&gt;
+      &lt;div class=&quot;details&quot;&gt;
+        &lt;div class=&quot;name&quot;&gt;
+          Simple jeans
+        &lt;/div&gt;
+        &lt;div class=&quot;price&quot;&gt;
+          &lt;span class='cross'&gt;
+            $25.00
+          &lt;/span&gt;
+          &lt;span class='discount'&gt;
+            $10.00
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre>
+					<h4>Sidebar tag widget</h4>
+					<pre class='prettyprint'>&lt;ul class=&quot;tags&quot;&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot; class='big-2'&gt;
+      test
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot; class='big-1'&gt;
+      mac
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot;&gt;
+      imac
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot; class='big-5'&gt;
+      shirt
+    &lt;/a&gt;
+  &lt;/li&gt;</pre>
+					<h4>
+						Shop product view
+					</h4>
+					<p>
+						Basic bootstrap grid features are used here. The images trigger colorbox in order to provide a good and user-friendly show method. There is no real markup to show here because it uses the default bootstrap &amp; theme functions and elements which are already described above. 
+					</p>
+					<h4>Mobile sidebar with button</h4>
+					<p>
+						To use a button for the sidebar for mobile devices you have to add some things to the page. First you will need:
+					</p>
+					<pre class='prettyprint'>&lt;body data-mobile-sidebar=&quot;button&quot;&gt;</pre>
+					<p>
+						You also need to add the button. The code should be in this order:
+					</p>
+					<pre class='prettyprint'>&lt;div id=&quot;navigation&quot;&gt;
+  &lt;div class=&quot;container-fluid&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;mobile-sidebar-toggle&quot;&gt;
+      &lt;i class=&quot;icon-th-list&quot;&gt;
+      &lt;/i&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;#&quot; id=&quot;brand&quot;&gt;
+      FLAT
+    &lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;toggle-nav&quot; rel=&quot;tooltip&quot; data-placement=&quot;bottom&quot; title=&quot;Toggle navigation&quot;&gt;
+      &lt;i class=&quot;icon-reorder&quot;&gt;
+      &lt;/i&gt;
+    &lt;/a&gt;
+    ...
+    ...
+</pre>
+					<h4>Footer</h4>
+					<p>
+						Simple place the following code to the bottom of the <code>body</code> tag.
+					</p>
+					<pre class='prettyprint'>&lt;div id=&quot;footer&quot;&gt;
+  &lt;p&gt;
+    FLAT - Responsive Admin Template 
+    &lt;span class=&quot;font-grey-4&quot;&gt;
+      |
+    &lt;/span&gt;
+    
+    &lt;a href=&quot;#&quot;&gt;
+      Contact
+    &lt;/a&gt;
+    
+    &lt;span class=&quot;font-grey-4&quot;&gt;
+      |
+    &lt;/span&gt;
+    
+    &lt;a href=&quot;#&quot;&gt;
+      Imprint
+    &lt;/a&gt;
+    
+  &lt;/p&gt;
+  &lt;a href=&quot;#&quot; class=&quot;gototop&quot;&gt;
+    &lt;i class=&quot;icon-arrow-up&quot;&gt;
+    &lt;/i&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</pre>
+				<h4>Timeline</h4>
+				<p>
+					The basic timeline markup is shown below. A single element markup can be found if you read further. The timeline has the feature to display normal text, a video, a gallery or single images. You can easily create your own custom contents
+				</p>
+				<pre class="prettyprint">&lt;ul class=&quot;timeline&quot;&gt;
+	&lt;!-- Elements --&gt;
+&lt;/ul&gt;</pre>
+				<p>Every markup for a timeline item is the same. Of course you could remove the timeline-images element and replace it with a video or basic text or anything else.</p>
+					<pre class="prettyprint">&lt;li&gt;
+  &lt;div class=&quot;timeline-content&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;
+      &lt;div class=&quot;icon&quot;&gt;
+        &lt;i class=&quot;icon-picture&quot;&gt;
+        &lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;date&quot;&gt;
+        25. Apr
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;activity&quot;&gt;
+      &lt;div class=&quot;user&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+          John Doe
+        &lt;/a&gt;
+        
+        &lt;span&gt;
+          uploaded 12 new photos
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;ul class=&quot;timeline-images&quot;&gt;
+        &lt;li&gt;
+          &lt;a href=&quot;#&quot;&gt;
+            &lt;img src=&quot;img/demo/1.jpg&quot; alt=&quot;&quot;&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;line&quot;&gt;
+  &lt;/div&gt;
+&lt;/li&gt;</pre>
+				<h4>FAQ</h4>
+				<p>The FAQ page uses the left-side tabs and accordion. There isn't a separate element for FAQs. See the section for accordion or tabs for more information.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
+
+

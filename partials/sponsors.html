@@ -1,0 +1,128 @@
+<!-- This is the Dashboard-->
+<div class="row">
+    <div class="col-lg-12">
+        <h1>Sponsors <small>Enter your data</small></h1>
+        <ol class="breadcrumb">
+            <li><a href="#!/index"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active"><i class="fa fa-edit"></i> Sponsors</li>
+        </ol>
+    </div>
+</div><!-- /.row -->
+
+<div class="row">
+    <div class="col-lg-12">
+        <p>
+            <button ng-click="addSponsor(null)" type="button" class="btn btn-primary">Add new</button>
+        </p>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Sponsor ID</th>
+                        <th>Sponsor Name</th>
+                        <th>Contact</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="sponsor in data.sponsors">
+                        <td>
+                            {{sponsor.Id}} 
+                        </td>
+                        <td>
+                            {{sponsor.Sponsorname}} 
+                        </td>
+                        <td>
+                            {{sponsor.Contact.Contactname}} 
+                        </td>
+                        <td>
+                            {{sponsor.Contact.Email}} 
+                        </td>
+                        <td>
+                            {{sponsor.Contact.Phone}} 
+                        </td>
+                        <td>
+                            <a ng-click="addSponsor(sponsor)">Edit</a> | <a ng-click="deleteSponsor(sponsor)">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- form for add/edit sponsor--> 
+<script type="text/ng-template" id="addEditSponsor.html">
+    
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" ng-click="cancel()">&times;</button>
+            <h4 class="modal-title">Add/edit sponsor</h4>
+          </div>
+          <form ng-submit="submit()">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label>Sponsor Name</label>
+                        <input type="text" class="form-control" ng-model="tmpsponsor.Sponsorname" required/>
+
+                        <label>Sponsor Email Message</label>
+                        <input type="text" class="form-control" ng-model="tmpsponsor.Sponsormessage" required/>
+
+                        <label>Sponsor Text Message</label>
+                        <input type="text" class="form-control" ng-model="tmpsponsor.Sponsortextmessage" required/>
+
+                        <label>Sponsor Website</label>
+                        <input type="text" class="form-control" ng-model="tmpsponsor.Website" required/>
+
+                        <label>City</label>
+                        <input type="text" class="form-control" ng-model="tmpsponsor.City" required/>
+
+                        <label>State</label>
+                        <select class="form-control" data-ng-model="tmpsponsor.StateId"
+                              ng-options="state.Id as state.Name for state in data.states" required>
+                              <option value="">--Select a state--</option>
+                          </select>
+
+                        <label>Zipcode</label>
+                        <input type="text" class="form-control" ng-model="tmpsponsor.Zipcode" required/>
+
+
+                        <label>Address 1</label>
+                        <input type="text" class="form-control" ng-model="tmpsponsor.Contact.Address1" required/>
+
+                        <label>Address 2</label>
+                        <input type="text" class="form-control" ng-model="tmpsponsor.Contact.Address2" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Business Contact</label>
+                        <input type="text" class="form-control" ng-model="tmpsponsor.Contact.Contactname" required/>
+
+                        <label>Business Phone</label>
+                        <input type="text" class="form-control" ng-model="tmpsponsor.Contact.Phone" required/>
+                        
+                        <label>Business Email</label>
+                        <input type="text" class="form-control" ng-model="tmpsponsor.Contact.Email" required/>
+
+                        <label>Marketing Phone</label>
+                        <input type="text" class="form-control" ng-model="tmpsponsor.Maketingphone" required/>
+
+                        <label>Marketing Email</label>
+                        <input type="text" class="form-control" ng-model="tmpsponsor.Maketingemail" required/>
+
+                        <label>Note</label>
+                        <input type="text" class="form-control" ng-model="tmpsponsor.Note" />
+                    </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" value="Submit" />
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </div>
+          </form>
+        </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</script>

@@ -1,0 +1,271 @@
+.login-layout {
+    background-color: rgb(29, 32, 36);
+}
+
+.login-container {
+width: 375px;
+
+}
+
+.login-layout .widget-box.visible {
+    visibility: visible;
+    -webkit-transform: scale(1, 1) translate(0px);
+    -webkit-transition: none;
+    transition: none;
+}
+.login-layout .widget-box {
+    visibility: hidden;
+    position: absolute;
+    overflow: hidden;
+    /*width: 100%;*/
+    border-bottom: 0px;
+    box-shadow: none;
+    padding: 6px;
+    background-color: rgb(57, 69, 87);
+    -webkit-transform: scale(0, 1) translate(-150px);
+}
+
+.header.blue {
+    border-bottom-color: #d5e3ef;
+}
+h4.bigger {
+    font-size: 19px;
+}
+.header {
+    line-height: 28px;
+    margin-bottom: 16px;
+    margin-top: 18px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #CCC;
+}
+.blue {
+    color: #478fca!important;
+}
+.green {
+color: #69aa46!important;
+}
+
+.red {
+color: #dd5a43!important;
+}
+.lighter {
+    font-weight: lighter;
+}
+
+
+.login-layout .login-box .widget-main {
+    padding-bottom: 16px;
+}
+.login-layout .widget-box .widget-main {
+    padding: 16px 36px 36px;
+    background: rgb(247, 247, 247);
+}
+
+element.style {
+}
+.widget-box.no-border > .widget-body {
+    border: 0px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+}
+.widget-body {
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-color: rgb(204, 204, 204);
+    border-bottom-color: rgb(204, 204, 204);
+    border-left-color: rgb(204, 204, 204);
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    border-top: 0px;
+    background-color: rgb(255, 255, 255);
+}
+
+.login-box .toolbar {
+    background: rgb(80, 144, 193);
+    border-top: 2px solid rgb(89, 117, 151);
+}
+
+.login-layout .widget-box .widget-body .toolbar > div > a {
+    font-size: 15px;
+    font-weight: 400;
+    text-shadow: rgba(0, 0, 0, 0.247059) 1px 0px 1px;
+}
+
+.login-box .toolbar > div:first-child + div > a {
+    margin-right: 11px;
+}
+.login-box .user-signup-link {
+    color: rgb(204, 255, 119);
+}
+
+.login-box .forgot-password-link {
+    color: rgb(255, 238, 153);
+}
+
+
+element.style {
+}
+a [class^="icon-"], a [class*=" icon-"] {
+    display: inline;
+}
+[class*=" icon-"], [class^="icon-"] {
+    display: inline-block;
+    text-align: center;
+}
+[class^="icon-"], [class*=" icon-"] {
+    display: inline;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    vertical-align: baseline;
+    background-image: none;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    margin-top: 0;
+}
+[class^="icon-"], [class*=" icon-"] {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-left:before {
+    content: "\f060";
+}
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    text-decoration: inherit;
+    display: inline-block;
+    speak: none;
+}
+
+.icon-arrow-right:before {
+    content: "\f061";
+}
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    text-decoration: inherit;
+    display: inline-block;
+    speak: none;
+}
+
+.icon-coffee:before {
+    content: "\f0f4";
+}
+
+.icon-key:before {
+    content: "\f084";
+}
+
+.icon-group:before {
+    content: "\f0c0";
+}
+
+.white {
+    color: #fff!important;
+}
+
+.login-box .toolbar > div:first-child {
+float: left;
+text-align: left;
+}
+.login-box .toolbar > div {
+width: 50%;
+display: inline-block;
+padding: 9px 0px 11px;
+}
+
+.forgot-box .toolbar {
+background: rgb(193, 96, 80);
+border-top: 2px solid rgb(151, 101, 89);
+padding: 9px 18px;
+}
+
+.forgot-box .back-to-login-link, .signup-box .back-to-login-link {
+color: rgb(255, 238, 153);
+font-size: 14px;
+font-weight: bold;
+text-shadow: rgba(0, 0, 0, 0.247059) 1px 0px 1px;
+}
+
+
+.signup-box .toolbar {
+background: rgb(118, 183, 116);
+border-top: 2px solid rgb(117, 151, 89);
+padding: 9px 18px;
+}
+
+.forgot-box .back-to-login-link, .signup-box .back-to-login-link {
+color: rgb(255, 238, 153);
+font-size: 14px;
+font-weight: bold;
+text-shadow: rgba(0, 0, 0, 0.247059) 1px 0px 1px;
+}
+
+.header.red {
+border-bottom-color: #f3cdc6;
+}
+
+.header.green {
+border-bottom-color: #cce2c1;
+}
+
+
+
+element.style {
+}
+.input-icon.input-icon-right > input {
+padding-left: 6px;
+padding-right: 24px;
+}
+textarea:hover, input[type="text"]:hover, input[type="password"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="date"]:hover, input[type="month"]:hover, input[type="time"]:hover, input[type="week"]:hover, input[type="number"]:hover, input[type="email"]:hover, input[type="url"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="color"]:hover {
+border-color: rgb(181, 181, 181);
+}
+.input-icon > input {
+padding-left: 24px;
+padding-right: 6px;
+}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+color: rgb(133, 133, 133);
+background-color: rgb(255, 255, 255);
+border: 1px solid rgb(213, 213, 213);
+border-image-source: initial;
+border-image-slice: initial;
+border-image-width: initial;
+border-image-outset: initial;
+border-image-repeat: initial;
+padding: 5px 4px;
+line-height: 1.2;
+font-size: 14px;
+font-family: inherit;
+transition-duration: 0.1s;
+-webkit-transition-duration: 0.1s;
+border-radius: 0px;
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+
+.login-layout label {
+margin-bottom: 11px;
+}
+.block {
+display: block!important;
+}
+label, .lbl {
+vertical-align: middle;
+}
+label {
+font-weight: normal;
+font-size: 14px;
+}

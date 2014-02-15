@@ -1,0 +1,148 @@
+<!-- This is the Dashboard-->
+<div class="row">
+    <div class="col-lg-12">
+        <h1>Organizations <small>Enter your data</small></h1>
+        <ol class="breadcrumb">
+            <li><a href="#!/index"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active"><i class="fa fa-edit"></i> Organizations</li>
+        </ol>
+    </div>
+</div><!-- /.row -->
+
+<div class="row">
+    <div class="col-lg-12">
+        <p>
+            <button ng-click="addOrganization(null)" type="button" class="btn btn-primary">Add new</button>
+        </p>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Organization ID</th>
+                        <th>Organization Name</th>
+                        <th>Community</th>
+                        <th>Service Number</th>
+                        <th>Email</th>
+                        
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="organization in data.organizations">
+                        <td>
+                            {{organization.Id}} 
+                        </td>
+                        <td>
+                            {{organization.Schoolname}} 
+                        </td>
+                        <td>
+                            {{organization.Community.Name}} 
+                        </td>
+                        
+                        <td>
+                            {{organization.Servicenumber}} 
+                        </td>
+                        <td>
+                            {{organization.Contact.Email}} 
+                        </td>
+                        <td>
+                            <a ng-click="addOrganization(organization)">Edit</a> | <a ng-click="deleteOrganization(organization)">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- form for add/edit organization--> 
+<script type="text/ng-template" id="addEditOrganization.html">
+    
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" ng-click="cancel()">&times;</button>
+            <h4 class="modal-title">Add/edit organization</h4>
+          </div>
+          <form ng-submit="submit()">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label>Organization Name</label>
+                        <input type="text" class="form-control" ng-model="tmporganization.Schoolname" required/>
+
+                        <label>SMS Number</label>
+                        <input type="text" class="form-control" ng-model="tmporganization.Servicenumber" required/>
+
+                        <label>Username (email)</label>
+                        <input type="email" class="form-control" ng-model="tmporganization.User.Email" required/>
+
+                        <label>Password</label>
+                        <input type="password" class="form-control" ng-model="tmporganization.User.Password" />
+
+                        <label>Confirm Password</label>
+                        <input type="password" class="form-control" ng-model="tmporganization.User.ConfirmPassword" />
+
+                        <label>Time Zone</label>
+                        <select class="form-control" data-ng-model="tmporganization.TimeZoneId"
+                              ng-options="timezone.Id as timezone.Timezonename for timezone in data.timezones" required>
+                              <option value="">--Select a timezone--</option>
+                        </select>
+
+                        <label>Sponsor</label>
+                        <select class="form-control" data-ng-model="tmporganization.SponsorId"
+                              ng-options="sponsor.Id as sponsor.Sponsorname for sponsor in data.sponsors" required>
+                              <option value="">--Select a sponsor--</option>
+                        </select>
+
+                        <label>Community</label>
+                        <select class="form-control" data-ng-model="tmporganization.CommunityId"
+                              ng-options="community.Id as community.Name for community in data.communities" required>
+                              <option value="">--Select a sponsor--</option>
+                        </select>
+
+                        <label>Note</label>
+                        <input type="text" class="form-control" ng-model="tmporganization.Note" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Contact Name</label>
+                        <input type="text" class="form-control" ng-model="tmporganization.Contact.Contactname" required/>
+
+                        <label>Contact Phone</label>
+                        <input type="text" class="form-control" ng-model="tmporganization.Contact.Phone" required/>
+
+                        <label>Contact Email</label>
+                        <input type="text" class="form-control" ng-model="tmporganization.Contact.Email" required/>
+                        
+                        <label>Contact Address 1</label>
+                        <input type="text" class="form-control" ng-model="tmporganization.Contact.Address1" required/>
+                        
+                        <label>Contact Address 2</label>
+                        <input type="text" class="form-control" ng-model="tmporganization.Contact.Address2" />
+                        
+                        <label>City</label>
+                        <input type="text" class="form-control" ng-model="tmporganization.City" required/>
+                        
+                        <label>State</label>
+                        <select class="form-control" data-ng-model="tmporganization.StateId"
+                              ng-options="state.Id as state.Name for state in data.states" required>
+                              <option value="">--Select a state--</option>
+                        </select>
+                        
+                        <label>Zipcode</label>
+                        <input type="text" class="form-control" ng-model="tmporganization.Zipcode" required/>
+                        
+                        <label>Website</label>
+                        <input type="text" class="form-control" ng-model="tmporganization.Website" required/>
+                        
+                    </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" value="Submit" />
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </div>
+          </form>
+        </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</script>
